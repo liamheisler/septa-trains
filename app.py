@@ -1,4 +1,11 @@
+'''
+SEPTA arrivals, departures, etc. by station
+'''
+# externals
 from flask import Flask, render_template, request, jsonify
+
+# internals
+from utils import utils
 from utils import septa
 
 # initialize the flask app
@@ -21,13 +28,13 @@ def submit():
         arrive_station=station_end,
         num_results=3
     )
-    print(septa_data)
+    septa_cleaned = utils.deconstruct_arrivals(septa_data)
 
     response = {
         "message": f"Data received successfully!",
         "station_end": station_end,
         "station_start": station_start,
-        "septa_data": septa_data
+        "septa_data": septa_cleaned
     }
 
     return jsonify(response)  # Respond with JSON
