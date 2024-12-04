@@ -31,10 +31,8 @@ def submit():
     septa_cleaned = utils.deconstruct_arrivals(septa_data)
 
     response = {
-        "message": f"Data received successfully!",
-        "station_end": station_end,
-        "station_start": station_start,
-        "septa_data": septa_cleaned
+        "path": f"{station_start} - {station_end}",
+        "trains": septa_cleaned
     }
 
     return jsonify(response)  # Respond with JSON

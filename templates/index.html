@@ -1,15 +1,84 @@
-<form action="/submit" method="POST">
-    <label for="station_start">Departure Start:</label>
-    <select id="station_start" name="station_start">
-        <option value="Torresdale">Torresdale</option>
-        <option value="30th Street Station">30th Street Station</option>
-    </select><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
 
-    <label for="station_end">Arrival Station:</label>
-    <select id="station_end" name="station_end">
-        <option value="Torresdale">Torresdale</option>
-        <option value="30th Street Station">30th Street Station</option>
-    </select><br><br>
+        form {
+            width: 300px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
 
-    <button type="submit">Submit</button>
-</form>
+        label, select, button {
+            width: 100%;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        select, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 480px) {
+            form {
+                width: 90%;
+                padding: 15px;
+            }
+
+            select, button {
+                font-size: 14px;
+            }
+
+            button {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="/submit" method="POST">
+        <label for="station_start">Departure Start:</label>
+        <select id="station_start" name="station_start">
+            <option value="Torresdale">Torresdale</option>
+            <option value="30th Street Station">30th Street Station</option>
+        </select><br><br>
+
+        <label for="station_end">Arrival Station:</label>
+        <select id="station_end" name="station_end">
+            <option value="Torresdale">Torresdale</option>
+            <option value="30th Street Station">30th Street Station</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
